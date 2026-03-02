@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'mixins';
+@import 'base';
+
+// Estilos específicos de la aplicación
+.container {
+    @include container;
+}
+
+button {
+    @include button;
+}
+
+// Header
+header {
+    background-color: $bg-white;
+    box-shadow: $shadow-sm;
+    padding: $spacing-md 0;
+
+    nav {
+        @include container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul {
+            display: flex;
+            gap: $spacing-lg;
+
+            a {
+                color: $text-color;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+// Footer
+footer {
+    background-color: $bg-dark;
+    color: $text-white;
+    padding: $spacing-2xl 0;
+    text-align: center;
+}
