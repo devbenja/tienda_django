@@ -1,47 +1,54 @@
-@import 'variables';
-@import 'mixins';
-@import 'base';
+@use 'variables' as vars;
+@use 'mixins' as mixins;
+@use 'base';
 
 // Estilos específicos de la aplicación
+// Variables y mixins usan namespaces explícitos
 .container {
-    @include container;
+    @include mixins.container;
 }
 
-button {
-    @include button;
+.button {
+    @include mixins.button;
+    display: inline-block;
+    text-decoration: none;
 }
 
 // Header
 header {
-    background-color: $bg-white;
-    box-shadow: $shadow-sm;
-    padding: $spacing-md 0;
+    background-color: vars.$bg-white;
+    box-shadow: vars.$shadow-sm;
+    padding: vars.$spacing-md 0;
 
     nav {
-        @include container;
+        @include mixins.container;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         ul {
             display: flex;
-            gap: $spacing-lg;
+            gap: vars.$spacing-lg;
 
             a {
-                color: $text-color;
+                color: vars.$text-color;
 
                 &:hover {
-                    color: $primary-color;
+                    color: vars.$primary-color;
                 }
             }
         }
+    }
+
+    h1 {
+        margin: 0;
     }
 }
 
 // Footer
 footer {
-    background-color: $bg-dark;
-    color: $text-white;
-    padding: $spacing-2xl 0;
+    background-color: vars.$bg-dark;
+    color: vars.$text-white;
+    padding: vars.$spacing-2xl 0;
     text-align: center;
 }

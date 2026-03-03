@@ -1,0 +1,6 @@
+// Importar variables como globales antes de reexportar
+// Mixins y base ahora tienen sus propias @use
+
+@forward 'variables';
+@forward 'mixins';
+@forward 'base';

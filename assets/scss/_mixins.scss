@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 // Mixin para botones
 @mixin button($bg-color: $primary-color) {
   padding: $spacing-md $spacing-xl;
