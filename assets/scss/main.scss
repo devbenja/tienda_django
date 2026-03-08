@@ -1,9 +1,9 @@
 @use 'variables' as vars;
 @use 'mixins' as mixins;
 @use 'base';
+@use 'header' as hdr;
 
 // Estilos específicos de la aplicación
-// Variables y mixins usan namespaces explícitos
 .container {
     @include mixins.container;
 }
@@ -14,41 +14,15 @@
     text-decoration: none;
 }
 
-// Header
-header {
-    background-color: vars.$bg-white;
-    box-shadow: vars.$shadow-sm;
-    padding: vars.$spacing-md 0;
-
-    nav {
-        @include mixins.container;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        ul {
-            display: flex;
-            gap: vars.$spacing-lg;
-
-            a {
-                color: vars.$text-color;
-
-                &:hover {
-                    color: vars.$primary-color;
-                }
-            }
-        }
-    }
-
-    h1 {
-        margin: 0;
-    }
-}
-
 // Footer
 footer {
     background-color: vars.$bg-dark;
     color: vars.$text-white;
     padding: vars.$spacing-2xl 0;
     text-align: center;
+}
+
+// Espacio extra para header sticky cuando está fijo
+main {
+    margin-top: 0;
 }
